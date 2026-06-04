@@ -39,7 +39,13 @@ class ProposalRequest(BaseModel):
 class ProposalResponse(BaseModel):
     proposal_text: str
 
-
+@app.get("/")
+def home():
+    return {
+        "message": "Proposal Generator API is running",
+        "health": "/health",
+        "generate": "/generate"
+    }
 @app.get("/health")
 def root():
     return {"status": "Proposal Generator API is running"}
