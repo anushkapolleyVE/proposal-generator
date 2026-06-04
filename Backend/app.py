@@ -16,7 +16,7 @@ app = FastAPI(title="Proposal Generator API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -70,6 +70,7 @@ Project Description: {req.description}
             user_phases=req.phases,
             user_resources=req.resources,
         )
+ 
         return ProposalResponse(proposal_text=proposal_text)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
