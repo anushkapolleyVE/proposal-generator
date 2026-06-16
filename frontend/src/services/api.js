@@ -1,4 +1,4 @@
-const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const BASE_URL = import.meta.env.VITE_API_URL || "https://anushkapolley-proposal-generator.hf.space";
 
 /**
  * Generate a proposal from form data.
